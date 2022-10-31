@@ -8,11 +8,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Ingredient(models.Model):
+class Movies(models.Model):
     name = models.CharField(max_length=100)
-    notes = models.TextField()
+    genre = models.TextField()
     category = models.ForeignKey(
-        Category, related_name="ingredients", on_delete=models.CASCADE
+        Category, related_name="movies", on_delete=models.CASCADE
     )
 
     def __str__(self):
